@@ -1,0 +1,29 @@
+# Program to return all unique palindromes
+
+def checkPalin(str):    # Function for checking palindrome
+    for i in range(int(len(str)/2)):
+        if str[i] != str[-1*(i+1)]:
+            return False
+    return True
+
+# Function to return all palindromes
+def Palin(s):
+
+    left, right = 0, len(s)
+    x = right
+    ans = []
+
+    while left < right-1 :
+        temp = s[left:x] 
+        x-=1
+
+        if checkPalin(temp):
+            ans.append(temp)
+
+        if x < left+2:
+            left += 1
+            x = right
+
+    return list(set(ans))
+
+print(Palin("abacabdefe"))
