@@ -1,0 +1,27 @@
+''' A Program to implementing the Binary search '''
+
+# Here, (ls) list is created 
+def binary_Search(ls, low, high, key):      # key is searching or target element
+    mid = int(( high + low )/ 2)
+    
+    # When key is equal at the middle location. Then, it returns the location of the middle
+    if key == ls[mid]:      
+        return mid
+
+    # When the searhing element is greater then it's middle location then, this operation performed
+    elif key > ls[mid]:
+        if mid == high:
+            return -1
+        return binary_Search(ls, mid+1, high, key)
+    
+    # When the searhing element is smaller then it's middle location then, this operation performed
+    else:
+        if mid == 0:
+            return -1
+        return binary_Search(ls, low, mid-1, key)
+
+
+# Here, list is intialized, it must be sorted
+ls = [7, 8, 22, 44, 56, 67, 80, 87, 98 ] 
+target = 80
+print(binary_Search(ls, 0, len(ls)-1, target))
