@@ -26,4 +26,5 @@ def Palin(s):
 
     return list(set(ans))
 
-print(Palin("abacabdefe"))
+p = Palin("abacabdefe")
+print(f"The all possible Palindromes are : {p}")
