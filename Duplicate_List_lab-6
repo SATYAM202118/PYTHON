@@ -1,0 +1,19 @@
+''' To find Duplicate element in List '''
+class Duplicate:
+    def duplicate(self, list1):
+
+        uniqueList = []
+        duplicateList = []
+
+        for i in list1:
+            if i not in uniqueList:
+                uniqueList.append(i)
+            elif i not in duplicateList:
+                duplicateList.append(i)
+
+        return duplicateList
+
+
+d = Duplicate()
+List1 = [2, 1, 1, 4, 3, 5, 6, 5, 3, 8, 9, 9]
+print(d.duplicate(List1))
