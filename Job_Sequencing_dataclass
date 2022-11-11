@@ -1,0 +1,17 @@
+# Program that represent "Job Sequencing with Deadlines" using dataclass
+
+from dataclasses import dataclass
+
+
+@dataclass
+class Job:
+    job_name: str
+    profit: int
+    deadline: int
+
+    def __repr__(self) -> str:
+        return f"[{self.job_name}, {self.profit}, {self.deadline}]"
+
+
+a = Job('A1', 200, 1)
+print(a)
