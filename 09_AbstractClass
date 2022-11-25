@@ -1,0 +1,25 @@
+import abc
+
+class Sort(abc.ABC):
+    @abc.abstractmethod
+    def sort(self):
+        pass
+
+class SelectionSort(Sort):
+    def __init__(self, arr):
+        self.array = arr
+
+    def sort(self):
+        size = len(self.array)
+        for i in range(size):
+            min_idx = i
+            for j in range(i + 1, size):
+                if self.array[j] < self.array[min_idx]:
+                    min_idx = j
+            (self.array[i], self.array[min_idx]) = (
+                self.array[min_idx], self.array[i])
+
+data = [23, 545, -5, 7, 0, 15]
+sorted_data = SelectionSort(data)
+sorted_data.sort()
+print(sorted_data.array)
