@@ -1,10 +1,10 @@
 # Class to accommodates Tree Traversal types(Inorder, Preorder, Postorder)
 
 class Node:
-    def __init__(self, key):
+    def __init__(self, value):
         self.left = None
         self.right = None
-        self.val = key
+        self.val = value
 
     def inOrder(self, root):
         if root:
@@ -30,14 +30,14 @@ root.right = Node(5)  # type: ignore
 root.left.left = Node(7)  # type: ignore
 root.left.right = Node(8)  # type: ignore
 
-print("InOrder Traversal :", end=" ")
+print("InOrder Traversal :", end="")
 root.inOrder(root)
 print("")
 
-print("PreOrder Traversal :", end=" ")
+print("PreOrder Traversal :", end="")
 root.preOrder(root)
 print("")
 
-print("PostOrder Traversal :", end=" ")
+print("PostOrder Traversal :", end="")
 root.postOrder(root)
 print("")
